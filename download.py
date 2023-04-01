@@ -86,10 +86,14 @@ def download():
             path = WebDriverWait(driver, 120000, 1).until(every_downloads_chrome)[0]
             print(f'\tDownload finished: {url}')
             print(path)
-            time.sleep(3.)
+            time.sleep(10.)
             path = path.split('file://')[-1]
             target_path = os.path.join(os.getcwd(), target_filename)
-            os.rename(path, target_path)
+            try:
+                os.rename(path, target_path)
+            except e:
+                print('renaming failed')
+                print(e)
 
 
 if __name__ == '__main__':
