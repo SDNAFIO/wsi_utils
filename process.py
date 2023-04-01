@@ -3,7 +3,7 @@ import tarfile
 
 
 def extract_archives():
-    manifest = open('gdc_manifest_kidney.txt')
+    manifest = open('gdc_manifest_brca.txt')
     entries = [x for x in manifest][1:]
 
     for idx, entry in enumerate(entries):
